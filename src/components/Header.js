@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import { Switch } from "@mui/material";
+//
 import {
   AppBar,
   Box,
@@ -12,9 +13,12 @@ import {
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store";
-function Header() {
+import { useStyles } from "./utils";
+function Header({ toggleDarkMode, darkMode }) {
+  const styles = useStyles();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const dispatch = useDispatch();
+
   const [value, setValue] = useState();
 
   return (
@@ -28,6 +32,7 @@ function Header() {
       >
         <Toolbar>
           <Typography
+            className={styles.font}
             sx={{
               color: "#68a869",
             }}
@@ -36,15 +41,37 @@ function Header() {
             TravelBlog
           </Typography>
 
+          <Switch
+            checked={darkMode}
+            onChange={toggleDarkMode}
+            color="primary"
+          />
+
           {isLoggedIn && (
-            <Box display="flex" marginLeft="auto" marginRight="auto">
+            <Box display="flex" marginLeft={"auto"} marginRight="auto">
               <Tabs
                 textColor="inherit"
                 value={value}
                 onChange={(e, val) => setValue(val)}
               >
-                <Tab LinkComponent={Link} to="/blogs" label="ALL BLOGS" />
-                <Tab LinkComponent={Link} to="/myblogs" label="MY BLOG" />
+                <Tab
+                  className={styles.font}
+                  LinkComponent={Link}
+                  to="/blogs"
+                  label="ALL BLOGS"
+                />
+                <Tab
+                  className={styles.font}
+                  LinkComponent={Link}
+                  to="/myblogs"
+                  label="MY BLOG"
+                />
+                <Tab
+                  className={styles.font}
+                  LinkComponent={Link}
+                  to="/addblog"
+                  label="ADD BLOG"
+                />
               </Tabs>
             </Box>
           )}

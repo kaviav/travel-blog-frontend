@@ -69,7 +69,7 @@ const Auth = () => {
           marginTop={5}
           borderRadius={5}
         >
-          <Typography textAlign="center" padding={3} variant="h2">
+          <Typography textAlign="center" padding={3} variant="h3">
             {isSignUp ? "SignUP" : "Login"}
           </Typography>
 
