@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { authActions } from "../store";
+
 const Auth = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

@@ -13,9 +13,8 @@ import {
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store";
-import { useStyles } from "./utils";
+
 function Header({ toggleDarkMode, darkMode }) {
-  const styles = useStyles();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const dispatch = useDispatch();
 
@@ -32,7 +31,7 @@ function Header({ toggleDarkMode, darkMode }) {
       >
         <Toolbar>
           <Typography
-            className={styles.font}
+            // className={styles.font}
             sx={{
               color: "#68a869",
             }}
@@ -55,19 +54,19 @@ function Header({ toggleDarkMode, darkMode }) {
                 onChange={(e, val) => setValue(val)}
               >
                 <Tab
-                  className={styles.font}
+                  // className={styles.font}
                   LinkComponent={Link}
                   to="/blogs"
                   label="ALL BLOGS"
                 />
                 <Tab
-                  className={styles.font}
+                  // className={styles.font}
                   LinkComponent={Link}
                   to="/myblogs"
                   label="MY BLOG"
                 />
                 <Tab
-                  className={styles.font}
+                  // className={styles.font}
                   LinkComponent={Link}
                   to="/addblog"
                   label="ADD BLOG"
