@@ -8,7 +8,7 @@ function UserBlogs() {
   const [user, setUser] = useState();
   const sendRequest = async () => {
     const res = await axios
-      .get(`http://localhost:5000/blog/getuser/${id}`)
+      .get(`https://travel-blob-backend.onrender.com/blog/getuser/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     console.log(data);

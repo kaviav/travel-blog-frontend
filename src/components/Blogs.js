@@ -8,7 +8,7 @@ const Blogs = () => {
 
   const sendRequest = async () => {
     const res = await axios
-      .get("http://localhost:5000/blog/getall")
+      .get("https://travel-blob-backend.onrender.com/blog/getall")
       .catch((err) => console.log(err));
 
     const data = res.data;

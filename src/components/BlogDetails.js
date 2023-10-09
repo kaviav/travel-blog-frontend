@@ -19,7 +19,7 @@ function BlogDetails() {
 
   const fetchDetails = async () => {
     const res = await axios
-      .get(`http://localhost:5000/blog/getid/${id}`)
+      .get(`https://travel-blob-backend.onrender.com/blog/getid/${id}`)
       .catch((err) => console.log(err));
     const data = res.data;
     console.log(data);
@@ -39,7 +39,7 @@ function BlogDetails() {
 
   const updateRequest = async () => {
     const res = await axios
-      .put(`http://localhost:5000/blog/updateblog/${id}`, {
+      .put(`https://travel-blob-backend.onrender.com/blog/updateblog/${id}`, {
         title: input.title,
         description: input.description,
         image: input.imageURL,

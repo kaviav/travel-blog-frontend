@@ -25,7 +25,7 @@ const Auth = () => {
 
   const sendRequest = async (type = "login") => {
     const res = await axios
-      .post(`http://localhost:5000/user/${type}`, {
+      .post(`https://travel-blob-backend.onrender.com/user/${type}`, {
         name: input.name,
         email: input.email,
         password: input.password,

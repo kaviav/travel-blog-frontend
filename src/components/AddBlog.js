@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const labelStyles = { mt: 2, mb: 1, fontSize: "24px", fontWeight: "bold" };
 const AddBlog = () => {
-const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const [input, setInput] = useState({
     title: "",
@@ -23,7 +23,7 @@ const navigate=useNavigate()
 
   const sendRequest = async () => {
     const res = await axios
-      .post("http://localhost:5000/blog/addblog", {
+      .post("https://travel-blob-backend.onrender.com/blog/addblog", {
         title: input.title,
         description: input.description,
         image: input.imageURL,
@@ -37,8 +37,10 @@ const navigate=useNavigate()
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    sendRequest().then((data) => console.log(data)).then(()=>navigate("/myBlogs"))
+    e.preventDefault();
+    sendRequest()
+      .then((data) => console.log(data))
+      .then(() => navigate("/myBlogs"));
   };
 
   return (

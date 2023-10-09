@@ -25,7 +25,7 @@ const BlogItem = ({ title, description, imageURL, userName, isUser, id }) => {
 
   const deleteRequest = async () => {
     const res = await axios
-      .delete(`http://localhost:5000/blog/delete/${id}`)
+      .delete(`https://travel-blob-backend.onrender.com/blog/delete/${id}`)
       .catch((err) => console.log(err));
 
     const data = res.data;
